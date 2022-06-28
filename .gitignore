@@ -1,0 +1,6 @@
+*.session
+pog
+thumbs
+cache
+.ipynb_checkpoints
+__pycache__
