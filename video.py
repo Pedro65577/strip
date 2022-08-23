@@ -22,7 +22,10 @@ def download(url, file_name):
 def gen_thumb(file_name):
     thumb = file_name +  '.jpeg'
     args = ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-i', 'cache/' + file_name, '-ss', '00:00:59', '-frames:v', '1','thumbs/' + thumb] #i know it looks weird
-    if os.path.isfile('thumbs/' + thumb):
+    process = subprocess.Popen(args)
+    comm = process.communicate()[0]
+    rc = process.returncode
+    if rc == 0 and os.path.isfile('thumbs/' + thumb):
         return thumb
     else:
         return 'null'
