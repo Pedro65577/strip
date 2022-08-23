@@ -91,7 +91,7 @@ def start_job(client, message):
     # for x in range(len(test)):
         # if test[x].isnumeric():
         #     message.forward( chat_id=-1001372231901, from_chat_id=message.chat.id, message_ids=message.message_id)
-    if not helper.b_whitelisted(chat_id):
+    if helper.b_whitelisted(chat_id):
         message.reply_text('Usuário não autorizado, contacte @anticongelante para se informar e obter acesso')
         return
     if not is_valid:
@@ -137,13 +137,10 @@ def delete_thumb(client, message):
 
 @app.on_message(filters.command(['start', 'help']))
 def help(client, message):
-    message.reply_text("""
-    Usage: 
-    URL | NAME 
-    in case name is omitted a random one will be generated
-
-    To set a default thumbnail just send a new image file maximum 200kb (i never tested this feature so it may break everything xD)
-    To delete the current thumbnail use /delete_thumb
+    message.reply_text("""BUZZCAST LIVES  PRIVATE ☠️
+    
+    BUZZCAST LIVES  PRIVATE ☠️
+    
     """)
 
 
