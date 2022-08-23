@@ -39,7 +39,7 @@ def handle_video(url, file_name, chat_id, caption, uid):
             if os.path.isfile('thumbs/thumb_' + str(uid)):
                 message = app.send_video(chat_id, PATH + file_name, caption, thumb='thumbs/thumb_' + str(uid), duration=duration) 
             elif thumb != 'null':
-                message = app.send_video(chat_id, PATH + file_name, caption, 'thumbs/' + thumb, duration=duration)
+                message = app.send_video(chat_id, PATH + file_name, caption, thumb='thumbs/' + thumb, duration=duration)
             else:
                 message = app.send_video(chat_id, PATH + file_name, caption, duration=duration)
         except:
@@ -138,12 +138,9 @@ def delete_thumb(client, message):
 @app.on_message(filters.command(['start', 'help']))
 def help(client, message):
     message.reply_text("""
-    Usage: 
-    URL | NAME 
-    in case name is omitted a random one will be generated
-
-    To set a default thumbnail just send a new image file maximum 200kb (i never tested this feature so it may break everything xD)
-    To delete the current thumbnail use /delete_thumb
+    
+    BUZZCAST LIVES  PRIVATE ☠️
+    
     """)
 
 
